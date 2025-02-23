@@ -12,6 +12,4 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 	ctx.fillStyle = bg;
 	ctx.fillRect(0, 0, 800, 600);
-
-	blitPix(3, 7);
 });
