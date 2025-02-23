@@ -2,6 +2,6 @@ function solid(x, y) {
 	return true;
 }
 
-function checker(x, y, ln) {
-	blitPix(x, y);
+function hStripe(x, stroke) {
+	return x % stroke > stroke / 2;
 }
