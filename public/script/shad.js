@@ -5,3 +5,7 @@ function solid(x, y) {
 function hStripe(x, stroke) {
 	return x % stroke > stroke / 2;
 }
+
+function vStripe(y, stroke) {
+	return y % stroke > stroke / 2;
+}
