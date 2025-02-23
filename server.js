@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const fs = require("fs");
 const highScore = require("./high_score");
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
