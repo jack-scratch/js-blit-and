@@ -16,6 +16,13 @@ class Fs {
 
 		return req.responseText;
 	}
+
+	function save() {
+		var url = canv.toDataURL("image/png");
+		var newTab = window.open('about:blank', 'image from canvas');
+
+		newTab.document.write("<img src='" + url + "' alt='from canvas'/>");
+	}
 }
 
 class Ld {
