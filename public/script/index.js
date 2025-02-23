@@ -1,11 +1,3 @@
-function blitPix(x, y) {
-	ctx.fillStyle = js;
-
-	const ln = 1;
-
-	ctx.fillRect(x, y, ln, ln);
-}
-
 document.addEventListener("DOMContentLoaded", async function() {
 	window.canv = document.getElementById("disp");
 	
