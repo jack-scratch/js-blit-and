@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", async function() {
 	
 	const ctx = canv.getContext("2d");
 
-	ctx.fillStyle = "#333";
+	ctx.fillStyle = bg;
 	ctx.fillRect(0, 0, 800, 600);
 
-	ctx.fillStyle = "#f0db4f";
+	ctx.fillStyle = js;
 	ctx.fillRect(3, 7, 12, 3);
 });
