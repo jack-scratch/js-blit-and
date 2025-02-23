@@ -9,3 +9,7 @@ function hStripe(x, stroke) {
 function vStripe(y, stroke) {
 	return y % stroke > stroke / 2;
 }
+
+function checker(x, y, ln) {
+	return hStripe(x, ln) ^ vStripe(y, ln);
+}
