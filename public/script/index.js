@@ -1,11 +1,18 @@
+function blitPix(x, y) {
+	ctx.fillStyle = js;
+
+	const ln = 1;
+
+	ctx.fillRect(x, y, ln, ln);
+}
+
 document.addEventListener("DOMContentLoaded", async function() {
 	window.canv = document.getElementById("disp");
 	
-	const ctx = canv.getContext("2d");
+	window.ctx = canv.getContext("2d");
 
 	ctx.fillStyle = bg;
 	ctx.fillRect(0, 0, 800, 600);
 
-	ctx.fillStyle = js;
-	ctx.fillRect(3, 7, 12, 3);
+	blitPix(3, 7);
 });
