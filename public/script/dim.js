@@ -1,2 +1,2 @@
-const wd = 800;
-const ht = 600;
+const wd = 400;
+const ht = 300;
