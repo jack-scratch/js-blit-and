@@ -13,5 +13,5 @@ function blitSq(x, y, ln) {
 function blitPix(x, y) {
 	ctx.fillStyle = js;
 
-	blitSq(x, 600 - y, 1);
+	blitSq(x, ht - y, 1);
 }
