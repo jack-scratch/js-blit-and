@@ -17,7 +17,7 @@ class Fs {
 		return req.responseText;
 	}
 
-	function save() {
+	save() {
 		var url = canv.toDataURL("image/png");
 		var newTab = window.open('about:blank', 'image from canvas');
 
