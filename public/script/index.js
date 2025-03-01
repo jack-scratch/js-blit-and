@@ -1,6 +1,3 @@
-const wd = 800;
-const ht = 600;
-
 document.addEventListener("DOMContentLoaded", async function() {
 	window.canv = document.getElementById("disp");
 	
