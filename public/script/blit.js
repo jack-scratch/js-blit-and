@@ -1,38 +1,38 @@
-function blitRect(x, y, wd, ht) {
-	ctx.fillRect(x, y, wd, ht);
+function blitRect(loc, ln) {
+	ctx.fillRect(loc[0], loc[1], ln[0], ln[1]);
 }
 
-function blitSq(x, y, ln) {
-	blitRect(x, y, ln, ln);
+function blitSq(loc, ln) {
+	blitRect([loc[0], loc[1]], [ln, ln]);
 }
 
-function blitPix(x, y) {
-	blitSq(x, ht - y, 1);
+function blitPix(loc) {
+	blitSq([loc[0], ht - loc[1]], 1);
 }
 
-function blitHLine(x, y, ln) {
+function blitHLine(loc, ln) {
 	for (let i = 0; i < ln; i++) {
-		blitPix(x + i, y);
+		blitPix([loc[0] + i, loc[1]]);
 	}
 }
 
-function blitVLine(x, y, ln) {
+function blitVLine(loc, ln) {
 	for (let i = 0; i < ln; i++) {
-		blitPix(x, y + i);
+		blitPix([loc[0], loc[1] + i]);
 	}
 }
 
-function blitLine(startX, startY, endX, endY) {
-	const slope = (endY - startY) / (endX - startX);
+function blitLine(start, end) {
+	const slope = (end[1] - start[1]) / (end[0] - start[0]);
 
 	let dir = 1;
-	let baseY = startY;
-	if (endX < startX) {
+	let baseY = start[1];
+	if (end[0] < start[0]) {
 		dir = -1;
-		baseY = endY;
+		baseY = end[1];
 	}
 
-	for (let x = 0; x < Math.abs(endX - startX); x++) {
-		blitPix(startX + (x * dir), baseY + (x * slope));
+	for (let x = 0; x < Math.abs(end[0] - start[0]); x++) {
+		blitPix([start[0] + (x * dir), baseY + (x * slope)]);
 	}
 }
