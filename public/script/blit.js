@@ -23,7 +23,7 @@ function blitVLine(loc, ln) {
 }
 
 function blitLine(start, end) {
-	const slope = (end[1] - start[1]) / (end[0] - start[0]);
+	const slope = Math.delta(start[1], end[1]) / Math.delta(start[0] - end[0]);
 
 	let dir = 1;
 	let baseY = start[1];
@@ -32,7 +32,7 @@ function blitLine(start, end) {
 		baseY = end[1];
 	}
 
-	for (let x = 0; x < Math.abs(end[0] - start[0]); x++) {
+	for (let x = 0; x < Math.abs(Math.delta(start[0], end[0])); x++) {
 		blitPix([start[0] + (x * dir), baseY + (x * slope)]);
 	}
 }
