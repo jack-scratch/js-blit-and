@@ -36,3 +36,13 @@ function blitLine(start, end) {
 		blitPix([start[0] + (x * dir), baseY + (x * slope)]);
 	}
 }
+
+function blitSin(amp, freq = 1, theta = 0) {
+	for (let x = 0; x < wd; x++) {
+		for (let y = 0; y < ht; y++) {
+			if (y < Math.sin(theta + ((x / wd) * freq * Math.PI * 2)) * amp) {
+				ctx.fillRect(x, y, 1, 1);
+			}
+		}
+	}
+}

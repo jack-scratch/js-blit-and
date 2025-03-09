@@ -8,4 +8,6 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 	ctx.fillStyle = bg;
 	ctx.fillRect(0, 0, wd, ht);
+
+	ctx.fillStyle = js;
 });
