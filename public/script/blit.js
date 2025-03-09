@@ -1,39 +1,39 @@
 function blitRect(loc, ln) {
-	ctx.fillRect(loc[0], loc[1], ln[0], ln[1]);
+	ctx.fillRect(loc.x, loc.y, ln.x, ln.y);
 }
 
 function blitSq(loc, ln) {
-	blitRect([loc[0], loc[1]], [ln, ln]);
+	blitRect(new Cart(loc.x, loc.y), new Cart(ln, ln));
 }
 
 function blitPix(loc) {
-	blitSq([loc[0], ht - loc[1]], 1);
+	blitSq(new Cart(loc.x, ht - loc.y), 1);
 }
 
 function blitHLine(loc, ln) {
 	for (let i = 0; i < ln; i++) {
-		blitPix([loc[0] + i, loc[1]]);
+		blitPix(new Cart(loc.x + i, loc.y));
 	}
 }
 
 function blitVLine(loc, ln) {
 	for (let i = 0; i < ln; i++) {
-		blitPix([loc[0], loc[1] + i]);
+		blitPix(new Cart(loc.x, loc.y + i));
 	}
 }
 
 function blitLine(start, end) {
-	const slope = Math.delta(start[1], end[1]) / Math.delta(start[0] - end[0]);
+	const slope = Math.delta(start.y, end.y) / Math.delta(start.x - end.x);
 
 	let dir = 1;
-	let baseY = start[1];
-	if (end[0] < start[0]) {
+	let baseY = start.y;
+	if (end.x < start.x) {
 		dir = -1;
-		baseY = end[1];
+		baseY = end.y;
 	}
 
-	for (let x = 0; x < Math.abs(Math.delta(start[0], end[0])); x++) {
-		blitPix([start[0] + (x * dir), baseY + (x * slope)]);
+	for (let x = 0; x < Math.abs(Math.delta(start.x, end.x)); x++) {
+		blitPix(new Cart(start.x + (x * dir), baseY + (x * slope)));
 	}
 }
 
