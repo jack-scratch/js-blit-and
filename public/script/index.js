@@ -10,4 +10,12 @@ document.addEventListener("DOMContentLoaded", async function() {
 	ctx.fillRect(0, 0, wd, ht);
 
 	ctx.fillStyle = js;
+
+	const btn = document.getElementById("save");
+	const link = document.createElement("a");
+	link.download = "blit.png";
+	link.href = canv.toDataURL("image/png");
+	btn.addEventListener("click", () => {
+		link.click();
+	});
 });
